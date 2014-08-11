@@ -13,8 +13,8 @@ import java.util.Set;
  * an interface doesn't allow us to do stuff like this. It doesn't have any setters or getters at all. 
  * To solve this problem we use an abstract class.
  *
- * A little bit more information about this class. It knows all about users. Also this class contains 
- * all API for user's communication.
+ * A little bit more information about this class. It knows all about users. Also it contains all 
+ * API for user's communication.
  */
 public abstract class Mediator {
     protected Set<User> users;
