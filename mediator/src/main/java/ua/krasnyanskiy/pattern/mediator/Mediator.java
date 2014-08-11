@@ -5,7 +5,7 @@ import ua.krasnyanskiy.pattern.mediator.model.User;
 import java.util.Set;
 
 /**
- * We use an abstract class in order to be able to use loose coupling such us
+ * We use an abstract class in order to be able to use loose coupling such us:
  *
  *      Mediator mediator = new MediatorImpl(...)
  *
@@ -13,8 +13,8 @@ import java.util.Set;
  * an interface doesn't allow us to stuff like this. It doesn't have any setters or getters at all. 
  * To solve this problem we use an abstract class.
  *
- * A little bit more information about this class. It knows all about users. Also
- * this class contains almost all API for user's communication.
+ * A little bit more information about this class. It knows all about users. Also this class contains 
+ * all API for user's communication.
  */
 public abstract class Mediator {
     protected Set<User> users;
