@@ -8,7 +8,7 @@ public class MediatorImpl extends Mediator {
     @Override
     public void send(String msg, User user) {
         for (User u : users) {
-            if (!u.equals(user)) { // we don't ween to handle a message from ourselves
+            if (!u.equals(user)) { // we don't need to handle a message from ourselves
                 u.handle(msg);
             }
         }
