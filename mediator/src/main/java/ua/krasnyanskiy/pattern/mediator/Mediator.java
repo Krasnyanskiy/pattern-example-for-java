@@ -5,7 +5,7 @@ import ua.krasnyanskiy.pattern.mediator.model.User;
 import java.util.Set;
 
 /**
- * We use an abstract class in order to be able to use loose coupling such this:
+ * We use an abstract class in order to be able to use loose coupling such us
  *
  *      Mediator mediator = new MediatorImpl(...)
  *
