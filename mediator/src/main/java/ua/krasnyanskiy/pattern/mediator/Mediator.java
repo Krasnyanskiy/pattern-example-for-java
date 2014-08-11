@@ -26,5 +26,14 @@ public abstract class Mediator {
     }
 
     // An interface for all users
+
+    /**
+     * Sends a message.
+     */
     public abstract void send(String msg, User user);
+
+    /**
+     * Message handler.
+     */
+    public abstract void handle(String msg, User user);
 }

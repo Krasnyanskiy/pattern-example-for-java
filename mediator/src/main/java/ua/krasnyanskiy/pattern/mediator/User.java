@@ -31,5 +31,7 @@ public abstract class User {
     /**
      * Message handler.
      */
-    public abstract void handle(String msg);
+    public void handle(String msg){
+        mediator.handle(msg, this); // Simple delegation.
+    }
 }
