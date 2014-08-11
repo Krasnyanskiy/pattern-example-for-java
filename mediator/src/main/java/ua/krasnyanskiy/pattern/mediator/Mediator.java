@@ -10,7 +10,7 @@ import java.util.Set;
  *      Mediator mediator = new MediatorImpl(...)
  *
  * At the same time a setter for initializing of users field must be available. But as you may know
- * an interface doesn't allow us to stuff like this. It doesn't have any setters or getters at all. 
+ * an interface doesn't allow us to do stuff like this. It doesn't have any setters or getters at all. 
  * To solve this problem we use an abstract class.
  *
  * A little bit more information about this class. It knows all about users. Also this class contains 
