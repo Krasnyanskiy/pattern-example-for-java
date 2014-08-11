@@ -25,7 +25,6 @@ public abstract class User {
      * Sends a message.
      */
     public void send(String msg) {
-        //System.out.println("User " + name + " is sending a message... [" + msg + "]");
         mediator.send(msg, this); // Simple delegation.
     }
 
