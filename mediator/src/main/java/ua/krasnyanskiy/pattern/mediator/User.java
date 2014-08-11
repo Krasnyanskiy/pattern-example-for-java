@@ -1,0 +1,36 @@
+package ua.krasnyanskiy.pattern.mediator;
+
+/**
+ * @author Alexander Krasnyanskiy
+ */
+public abstract class User {
+
+    private Mediator mediator;
+    private String name;    
+
+    protected User(Mediator mediator, String name) {
+        this.mediator = mediator;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Sends a message.
+     */
+    public void send(String msg) {
+        //System.out.println("User " + name + " is sending a message... [" + msg + "]");
+        mediator.send(msg, this); // Simple delegation.
+    }
+
+    /**
+     * Message handler.
+     */
+    public abstract void handle(String msg);
+}
