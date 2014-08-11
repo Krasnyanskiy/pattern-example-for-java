@@ -1,5 +1,7 @@
 package ua.krasnyanskiy.pattern.mediator;
 
+import ua.krasnyanskiy.pattern.mediator.model.User;
+
 import java.util.Set;
 
 /**

@@ -1,4 +1,10 @@
-package ua.krasnyanskiy.pattern.mediator;
+package ua.krasnyanskiy.pattern.mediator.runner;
+
+import ua.krasnyanskiy.pattern.mediator.model.ComplexUser;
+import ua.krasnyanskiy.pattern.mediator.Mediator;
+import ua.krasnyanskiy.pattern.mediator.MediatorImpl;
+import ua.krasnyanskiy.pattern.mediator.model.SimpleUser;
+import ua.krasnyanskiy.pattern.mediator.model.User;
 
 import java.util.HashSet;
 import java.util.Set;

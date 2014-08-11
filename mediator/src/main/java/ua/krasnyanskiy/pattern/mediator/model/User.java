@@ -1,4 +1,6 @@
-package ua.krasnyanskiy.pattern.mediator;
+package ua.krasnyanskiy.pattern.mediator.model;
+
+import ua.krasnyanskiy.pattern.mediator.Mediator;
 
 /**
  * @author Alexander Krasnyanskiy
@@ -15,10 +17,6 @@ public abstract class User {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**
