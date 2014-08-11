@@ -3,7 +3,7 @@ package ua.krasnyanskiy.pattern.mediator.model;
 import ua.krasnyanskiy.pattern.mediator.Mediator;
 
 /**
- * A very simple User implementation.
+ * A very simple User implementation
  *
  * @author Alexander Krasnyanskiy
  */
