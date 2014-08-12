@@ -23,19 +23,10 @@ public abstract class Mediator {
         this.users = users;
     }
 
-    public Set<User> getUsers() {
-        return users;
-    }
-
     // An interface for all users
 
     /**
      * Sends a message
      */
     public abstract void send(String msg, User user);
-
-    /**
-     * Message handler
-     */
-    public abstract void handle(String msg, User user);
 }

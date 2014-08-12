@@ -7,7 +7,7 @@ import ua.krasnyanskiy.pattern.mediator.Mediator;
  */
 public abstract class User {
 
-    private Mediator mediator; // an API for communication between users
+    private Mediator mediator; // an API encapsulation for communication between users
     private String name;    
 
     protected User(Mediator mediator, String name) {
@@ -27,9 +27,10 @@ public abstract class User {
     }
 
     /**
-     * Message handler
+     * A method witch handle received message in unique style. This unique style with
+     * unique logic is determined by each user.
+     *
+     * @param msg message
      */
-    public void handle(String msg){
-        mediator.handle(msg, this); // simple delegation
-    }
+    public abstract void handle(String msg);
 }

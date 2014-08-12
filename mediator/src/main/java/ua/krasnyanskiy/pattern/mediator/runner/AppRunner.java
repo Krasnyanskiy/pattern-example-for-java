@@ -1,9 +1,10 @@
 package ua.krasnyanskiy.pattern.mediator.runner;
 
-import ua.krasnyanskiy.pattern.mediator.model.ComplexUser;
+import ua.krasnyanskiy.pattern.mediator.model.Broker;
+import ua.krasnyanskiy.pattern.mediator.model.Producer;
 import ua.krasnyanskiy.pattern.mediator.Mediator;
 import ua.krasnyanskiy.pattern.mediator.MediatorImpl;
-import ua.krasnyanskiy.pattern.mediator.model.SimpleUser;
+import ua.krasnyanskiy.pattern.mediator.model.Consumer;
 import ua.krasnyanskiy.pattern.mediator.model.User;
 
 import java.util.HashSet;
@@ -18,8 +19,9 @@ public class AppRunner {
         final Mediator mediator = new MediatorImpl();
 
         Set<User> users = new HashSet<User>() {{
-            add(new SimpleUser(mediator, "Fred"));
-            add(new ComplexUser(mediator, "Boris"));
+            add(new Consumer(mediator, "Fred The Consumer"));
+            add(new Producer(mediator, "Mike The Producer"));
+            add(new Broker(mediator, "Fill The Broker"));
         }};
 
         mediator.setUsers(users);
