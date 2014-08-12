@@ -1,6 +1,5 @@
 package ua.krasnyanskiy.pattern.mediator;
 
-import ua.krasnyanskiy.pattern.mediator.model.PrivilegedUser;
 import ua.krasnyanskiy.pattern.mediator.model.User;
 
 import java.util.Set;
@@ -30,9 +29,4 @@ public abstract class Mediator {
      * Sends a message
      */
     public abstract void send(String msg, User user);
-
-    /**
-     * Must be available only for privileged users
-     */
-    public abstract int sendSpecialMessage(String specialMessage, PrivilegedUser user);
 }

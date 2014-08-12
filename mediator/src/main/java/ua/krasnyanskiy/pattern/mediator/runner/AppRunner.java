@@ -2,13 +2,12 @@ package ua.krasnyanskiy.pattern.mediator.runner;
 
 import ua.krasnyanskiy.pattern.mediator.Mediator;
 import ua.krasnyanskiy.pattern.mediator.MediatorImpl;
-import ua.krasnyanskiy.pattern.mediator.model.Bartender;
 import ua.krasnyanskiy.pattern.mediator.model.Broker;
 import ua.krasnyanskiy.pattern.mediator.model.Consumer;
-import ua.krasnyanskiy.pattern.mediator.model.PrivilegedUser;
 import ua.krasnyanskiy.pattern.mediator.model.Producer;
 import ua.krasnyanskiy.pattern.mediator.model.User;
-import ua.krasnyanskiy.pattern.mediator.model.Whore;
+import ua.krasnyanskiy.pattern.mediator.model.special.Bartender;
+import ua.krasnyanskiy.pattern.mediator.model.special.Whore;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,22 +21,21 @@ public class AppRunner {
         final Mediator mediator = new MediatorImpl();
 
         Set<User> users = new HashSet<User>() {{
-            add(new Consumer(mediator, "Fred The Consumer"));
-            add(new Producer(mediator, "Mike The Producer"));
-            add(new Broker(mediator, "Fill The Broker"));
-            add(new Whore(mediator, "Sasha Gray The DeepThroat"));
-            add(new Bartender(mediator, "Bob The Master"));
+
+            // Ordinary guys
+            add(new Consumer(mediator, "Fred The Consumer", "Yeah! I'm buying, give me two!"));
+            add(new Producer(mediator, "Mike The Producer", "Want some role?"));
+            add(new Broker(mediator, "Fill The Broker", "I'm a rogue"));
+
+            // Special guests
+            add(new Whore(mediator, "Sasha Gray The DeepThroat", "Only for a 5 bucks!"));
+            add(new Bartender(mediator, "Bob The Master", "Tequila for a dirty lady!"));
         }};
 
         mediator.setUsers(users);
 
         for (User user : users) {
-            // fixme: this job (sendSpecialMessage) must be dune by mediator only
-            if (user instanceof PrivilegedUser) {
-                ((PrivilegedUser) user).sendSpecialMessage("Hi from " + user.getName() + "!");
-            } else {
-                user.send("Hi from " + user.getName() + "!");
-            }
+            user.send("'" + user.getMessage() + ",' says " + user.getName());
         }
     }
 }

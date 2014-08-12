@@ -9,10 +9,16 @@ public abstract class User {
 
     protected Mediator mediator; // an API encapsulation for communication between users
     private String name;
+    private String message;
 
-    protected User(Mediator mediator, String name) {
+    protected User(Mediator mediator, String name, String message) {
         this.mediator = mediator;
         this.name = name;
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public String getName() {
