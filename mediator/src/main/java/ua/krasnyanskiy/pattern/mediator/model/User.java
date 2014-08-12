@@ -33,7 +33,7 @@ public abstract class User {
     }
 
     /**
-     * A method witch handle received message in unique style. This unique style with
+     * A method which handle received message in unique style. This unique style with
      * unique logic is determined by each user.
      *
      * @param msg message
