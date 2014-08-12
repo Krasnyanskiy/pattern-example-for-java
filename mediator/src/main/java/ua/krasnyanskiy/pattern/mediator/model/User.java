@@ -7,8 +7,8 @@ import ua.krasnyanskiy.pattern.mediator.Mediator;
  */
 public abstract class User {
 
-    private Mediator mediator; // an API encapsulation for communication between users
-    private String name;    
+    protected Mediator mediator; // an API encapsulation for communication between users
+    private String name;
 
     protected User(Mediator mediator, String name) {
         this.mediator = mediator;
