@@ -26,7 +26,7 @@ public class AppRunner {
         }});
 
         /**
-         * Changing and saving with Memento the states of originator
+         * Changing and saving with Memento the states of Originator
          */
         Caretaker caretaker = new Caretaker();
         caretaker.addSnapshot(originator.save());
@@ -43,7 +43,7 @@ public class AppRunner {
         Memento m = caretaker.find(Criteria.ByCode, 500);
 
         /**
-         * And finally restoring on object
+         * And finally restoring an object
          */
         originator.restore(m);
     }
