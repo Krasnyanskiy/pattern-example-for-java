@@ -29,12 +29,15 @@ public class AppRunner {
          */
         Caretaker caretaker = new Caretaker();
         caretaker.addSnapshot(originator.save());
+        System.out.println(originator);
 
         originator.setCode(500);
         caretaker.addSnapshot(originator.save());
+        System.out.println(originator);
 
         originator.setCode(1500);
         caretaker.addSnapshot(originator.save());
+        System.out.println(originator);
 
         /**
          * We even could make some search with Caretaker
@@ -45,5 +48,6 @@ public class AppRunner {
          * And finally restoring an object
          */
         originator.restore(m);
+        System.out.println(originator);
     }
 }

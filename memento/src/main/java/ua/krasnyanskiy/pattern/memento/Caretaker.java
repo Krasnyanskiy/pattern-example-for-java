@@ -13,9 +13,7 @@ public class Caretaker {
     List<Originator.Memento> snapshots;
 
     public Caretaker() {
-        if (snapshots == null) {
-            snapshots = new ArrayList<Originator.Memento>();
-        }
+        this.snapshots = new ArrayList<Originator.Memento>();
     }
 
     public Caretaker(List<Originator.Memento> snapshots) {

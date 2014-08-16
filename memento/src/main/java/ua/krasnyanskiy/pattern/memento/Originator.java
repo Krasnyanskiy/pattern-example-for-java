@@ -49,13 +49,15 @@ public class Originator {
 
         public Memento(Originator o) {
             Cloner cloner = new Cloner();
-            this.state = cloner.deepClone(o.state);
-            this.code = cloner.deepClone(o.code);
             this.parameters = cloner.deepClone(o.parameters);
+
+            // we don't need to use deep clone because Integer and String are immutable classes
+            this.state = o.state;
+            this.code = o.code;
         }
 
         /**
-         * Here we have only setters. This is a narrow interface which provides
+         * Here we have only getters. This is a narrow interface which provides
          * access only for clone of state.
          */
         public String getState() {
@@ -71,6 +73,7 @@ public class Originator {
         }
     }
 
+    // for demo only
     @Override
     public String toString() {
         return "Originator{" +

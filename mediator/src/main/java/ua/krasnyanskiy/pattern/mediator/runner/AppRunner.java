@@ -15,6 +15,7 @@ import java.util.Set;
 /**
  * @author Alexander Krasnyanskiy
  */
+// todo: we also can add functionality for single user adding
 public class AppRunner {
     public static void main(String[] args) {
 

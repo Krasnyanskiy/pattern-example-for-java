@@ -5,7 +5,7 @@ import ua.krasnyanskiy.pattern.mediator.Mediator;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class Broker extends User{
+public class Broker extends User {
     public Broker(Mediator mediator, String name, String message) {
         super(mediator, name, message);
     }
