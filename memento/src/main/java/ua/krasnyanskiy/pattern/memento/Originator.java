@@ -1,5 +1,7 @@
 package ua.krasnyanskiy.pattern.memento;
 
+import com.rits.cloning.Cloner;
+
 import java.util.Map;
 
 /**
@@ -11,24 +13,16 @@ public class Originator {
     private Integer code;
     private Map<String, String> parameters;
 
-    public String getState() {
-        return state;
-    }
-
+    /**
+     * We have only setter here for security purposes (encapsulation). I mean we don't need
+     * to provide any access to the secret state for anybody.
+     */
     public void setState(String state) {
         this.state = state;
     }
 
-    public Integer getCode() {
-        return code;
-    }
-
     public void setCode(Integer code) {
         this.code = code;
-    }
-
-    public Map<String, String> getParameters() {
-        return parameters;
     }
 
     public void setParameters(Map<String, String> parameters) {
@@ -43,6 +37,38 @@ public class Originator {
         this.state = memento.getState();
         this.code = memento.getCode();
         this.parameters = memento.getParameters();
+    }
+
+    /**
+     * We use Memento class for making a snapshot of Originator state.
+     */
+    public class Memento {
+        private String state;
+        private Integer code;
+        private Map<String, String> parameters;
+
+        public Memento(Originator o) {
+            Cloner cloner = new Cloner();
+            this.state = cloner.deepClone(o.state);
+            this.code = cloner.deepClone(o.code);
+            this.parameters = cloner.deepClone(o.parameters);
+        }
+
+        /**
+         * Here we have only setters. This is a narrow interface which provides
+         * access only for clone of state.
+         */
+        public String getState() {
+            return state;
+        }
+
+        public Integer getCode() {
+            return code;
+        }
+
+        public Map<String, String> getParameters() {
+            return parameters;
+        }
     }
 
     @Override

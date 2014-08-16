@@ -1,9 +1,8 @@
 package ua.krasnyanskiy.pattern.memento.runner;
 
 import ua.krasnyanskiy.pattern.memento.Caretaker;
-import ua.krasnyanskiy.pattern.memento.support.Criteria;
-import ua.krasnyanskiy.pattern.memento.Memento;
 import ua.krasnyanskiy.pattern.memento.Originator;
+import ua.krasnyanskiy.pattern.memento.support.Criteria;
 
 import java.util.HashMap;
 
@@ -40,7 +39,7 @@ public class AppRunner {
         /**
          * We even could make some search with Caretaker
          */
-        Memento m = caretaker.find(Criteria.ByCode, 500);
+        Originator.Memento m = caretaker.find(Criteria.ByCode, 500);
 
         /**
          * And finally restoring an object
