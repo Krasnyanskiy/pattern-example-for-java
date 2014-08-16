@@ -30,6 +30,10 @@ public class Caretaker {
         return states;
     }
 
+    /**
+     * Even though guys from GOF insist that 'The Caretaker provides storage only; it should neither
+     * examine nor modify the contents of the Memento object' I still added a search logic into Caretaker class.
+     */
     public Memento find(Criteria criteria, Object key) {
         switch (criteria) {
             case ByCode:
