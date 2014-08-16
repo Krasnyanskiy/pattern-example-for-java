@@ -8,16 +8,13 @@ import java.util.Map;
  * @author Alexander Krasnyanskiy
  */
 public class Memento {
+
     private String state;
     private Integer code;
     private Map<String, String> parameters;
 
     public Memento(Originator originator) {
-
-        // Cloner setup
         Cloner cloner = new Cloner();
-
-        // Makes deep clones of objects and sets the fields
         this.state = cloner.deepClone(originator.getState());
         this.code = cloner.deepClone(originator.getCode());
         this.parameters = cloner.deepClone(originator.getParameters());

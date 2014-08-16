@@ -1,5 +1,7 @@
 package ua.krasnyanskiy.pattern.memento;
 
+import ua.krasnyanskiy.pattern.memento.support.Criteria;
+
 import java.util.ArrayList;
 import java.util.List;
 

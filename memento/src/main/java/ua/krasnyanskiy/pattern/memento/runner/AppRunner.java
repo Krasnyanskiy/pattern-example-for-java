@@ -1,7 +1,7 @@
 package ua.krasnyanskiy.pattern.memento.runner;
 
 import ua.krasnyanskiy.pattern.memento.Caretaker;
-import ua.krasnyanskiy.pattern.memento.Criteria;
+import ua.krasnyanskiy.pattern.memento.support.Criteria;
 import ua.krasnyanskiy.pattern.memento.Memento;
 import ua.krasnyanskiy.pattern.memento.Originator;
 
@@ -24,7 +24,6 @@ public class AppRunner {
             put("key1", "value1");
             put("key2", "value2");
         }});
-
 
         /**
          * Changing and saving with Memento the states of originator

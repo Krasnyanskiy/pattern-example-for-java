@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class Originator { // Первоисточник
+public class Originator {
 
     private String state;
     private Integer code;
@@ -35,11 +35,6 @@ public class Originator { // Первоисточник
         this.parameters = parameters;
     }
 
-    /**
-     * All logic for this method must be immutable
-     *
-     * @return saved Memento instance which encapsulated state of object
-     */
     public Memento save() {
         return new Memento(this);
     }

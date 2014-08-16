@@ -1,4 +1,4 @@
-package ua.krasnyanskiy.pattern.memento;
+package ua.krasnyanskiy.pattern.memento.support;
 
 /**
  * @author Alexander Krasnyanskiy
