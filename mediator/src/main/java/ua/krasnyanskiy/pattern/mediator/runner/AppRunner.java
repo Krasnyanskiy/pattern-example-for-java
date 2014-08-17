@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * @author Alexander Krasnyanskiy
  */
-// todo: we also can add functionality for single user adding
+// todo: we also can add functionality for single user adding to mediator
 public class AppRunner {
     public static void main(String[] args) {
 

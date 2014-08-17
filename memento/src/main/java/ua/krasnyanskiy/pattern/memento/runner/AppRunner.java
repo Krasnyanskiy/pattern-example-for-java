@@ -10,6 +10,11 @@ import java.util.HashMap;
  * @author Alexander Krasnyanskiy
  */
 public class AppRunner {
+
+    /**
+     * Please see another cool implementation here
+     * <a href="http://stackoverflow.com/questions/14082892/different-ways-to-implement-the-memento-pattern-in-java">link<a/>
+     */
     public static void main(String[] args) {
 
         Originator originator = new Originator();
