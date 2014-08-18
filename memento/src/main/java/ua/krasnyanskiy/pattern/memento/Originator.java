@@ -1,7 +1,5 @@
 package ua.krasnyanskiy.pattern.memento;
 
-import com.rits.cloning.Cloner;
-
 import java.util.Map;
 
 /**
@@ -34,42 +32,25 @@ public class Originator {
     }
 
     public void restore(Memento memento) {
-        this.state = memento.getState();
-        this.code = memento.getCode();
-        this.parameters = memento.getParameters();
+        this.state = memento.state;
+        this.code = memento.code;
+        this.parameters = memento.parameters;
     }
 
     /**
      * We use Memento class for making a snapshot of Originator state.
      */
     public class Memento {
-        private String state;
-        private Integer code;
-        private Map<String, String> parameters;
+
+        // field must be final
+        private final String state;
+        private final Integer code;
+        private final Map<String, String> parameters;
 
         public Memento(Originator o) {
-            Cloner cloner = new Cloner();
-            this.parameters = cloner.deepClone(o.parameters);
-
-            // we don't need to use deep clone because Integer and String are immutable classes
+            this.parameters = o.parameters;
             this.state = o.state;
             this.code = o.code;
-        }
-
-        /**
-         * Here we have only getters. This is a narrow interface which provides
-         * access only for clone of state.
-         */
-        public String getState() {
-            return state;
-        }
-
-        public Integer getCode() {
-            return code;
-        }
-
-        public Map<String, String> getParameters() {
-            return parameters;
         }
     }
 

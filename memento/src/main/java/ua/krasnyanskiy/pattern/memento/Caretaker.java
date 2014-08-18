@@ -1,7 +1,5 @@
 package ua.krasnyanskiy.pattern.memento;
 
-import ua.krasnyanskiy.pattern.memento.support.Criteria;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,30 +30,38 @@ public class Caretaker {
      * Even though guys from GOF insist that 'The Caretaker provides storage only; it should neither
      * examine nor modify the contents of the Memento object' I still added a search logic into the
      * Caretaker class.
+     *
+     *
+     * UPD (important):
+     *
+     * Guys form GOF are wright! All examine methods break all encapsulation! So we don't need to
+     * use them at all!
      */
+    /*            
     public Originator.Memento find(Criteria criteria, Object key) {
         switch (criteria) {
             case ByCode:
-                for (Originator.Memento state : snapshots) {
-                    if (state.getCode().equals(key)) {
-                        return state;
+                for (Originator.Memento snapshot : snapshots) {
+                    if (snapshot.code.equals(key)) {
+                        return snapshot;
                     }
                 }
                 break;
             case ByState:
-                for (Originator.Memento state : snapshots) {
-                    if (state.getState().equals(key)) {
-                        return state;
+                for (Originator.Memento snapshot : snapshots) {
+                    if (snapshot.code.equals(key)) {
+                        return snapshot;
                     }
                 }
                 break;
             case ByParameterKey:
-                for (Originator.Memento state : snapshots) {
-                    if (state.getParameters().containsKey(key)) {
-                        return state;
+                for (Originator.Memento snapshot : snapshots) {
+                    if (snapshot.parameters.containsKey(key)) {
+                        return snapshot;
                     }
                 }
         }
         return null;
     }
+    */
 }

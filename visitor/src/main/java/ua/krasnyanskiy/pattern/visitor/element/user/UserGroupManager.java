@@ -1,6 +1,5 @@
 package ua.krasnyanskiy.pattern.visitor.element.user;
 
-import ua.krasnyanskiy.pattern.visitor.element.user.User;
 import ua.krasnyanskiy.pattern.visitor.operation.Visitor;
 
 import java.util.List;
