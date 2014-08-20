@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Caretaker {
 
-    List<Originator.Memento> snapshots;
+    private List<Originator.Memento> snapshots;
 
     public Caretaker() {
         this.snapshots = new ArrayList<Originator.Memento>();
@@ -34,7 +34,7 @@ public class Caretaker {
      *
      * UPD (important):
      *
-     * Guys form GOF are wright! All examine methods break all encapsulation! So we don't need to
+     * Guys form GOF were wright! Examine methods break all encapsulation! So we don't need to
      * use them at all!
      */
     /*            
