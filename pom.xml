@@ -35,7 +35,6 @@
             <version>${powermock.version}</version>
         </dependency>
 
-
          <!-- for matchers? -->
         <dependency>
             <groupId>org.powermock</groupId>
