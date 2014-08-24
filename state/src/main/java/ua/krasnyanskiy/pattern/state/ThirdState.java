@@ -10,7 +10,7 @@ public class ThirdState extends State {
         State me = this;
         runJob(cash);
 
-        // todo: see how modification of context depends on {data}
+        // todo: see how modification of context depends on {cash}
         ctx.changeContextState(State.cash < 10 ? me : new FirstState());
     }
 
