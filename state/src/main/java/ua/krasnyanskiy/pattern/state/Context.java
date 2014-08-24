@@ -17,4 +17,9 @@ public class Context {
     public void execute(Integer data) {
         currentState.execute(this, data);
     }
+
+
+    public int getCompletion() {
+        return currentState.completion;
+    }
 }

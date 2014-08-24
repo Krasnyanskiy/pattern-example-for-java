@@ -3,30 +3,19 @@ package ua.krasnyanskiy.pattern.state;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class ThirdState implements State {
+public class ThirdState extends State {
+
     @Override
     public void execute(Context ctx, Integer data) {
         State me = this;
+        runJob(data *= 2);
 
+        // todo: see how modification of context depends on {data}
+        ctx.changeContextState(data > 7 ? me : new FirstState());
+    }
+
+    private void runJob(Integer data) {
+        completion += 25;
+        System.out.println("Printed in the second state: " + data);
     }
 }
-
-
-/**
-
-
-Java это статичекий язык. Его еще называют декларативным языком. Потому что ты один только один раз декларируешь
-в своем классе его поведение и его состояние. И все, что ты объявишь в классе это будет поведением этого класса,
-то есть алгоритмом.
-
-Например, алгоритм работы с БД (Repository Layer) состоит и рада методов для получения данных из базы,
-для изменения или внесения новых данных.
-
-Расширить алгоритм, при это не меняя структуры класса, в Java нельзя с точки зрения языка так, как это можно сделать,
-например, в JavaScript, где ты можешь легко накидывать новые методы в объект и тем самым меняя алгоритм (дополняя его,
-улучшая и т.д.)
-
-Но поведенческие паттерны позволяют тебе обойти ограничения Java и сделать твои классы расширяемыми в рантайме
-за счет "черной магии" - поведенческих паттернов. Поведенческие паттерны это настоящее Voodoo.
-
- */

@@ -3,7 +3,7 @@ package ua.krasnyanskiy.pattern.state;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class FirstState implements State {
+public class FirstState extends State {
 
     @Override
     public void execute(Context ctx, Integer data) {
@@ -13,6 +13,7 @@ public class FirstState implements State {
     }
 
     private void doJob(Integer data) {
+        completion += 15;
         System.out.println("Printed in the first state object: {" + data + "}");
     }
 }

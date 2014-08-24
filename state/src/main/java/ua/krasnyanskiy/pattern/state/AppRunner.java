@@ -14,5 +14,7 @@ public class AppRunner {
         context.execute(10);
         context.execute(20);
         context.execute(30);
+
+        System.out.println("Completed: " + context.getCompletion() + "%");
     }
 }
