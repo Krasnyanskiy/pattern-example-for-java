@@ -3,7 +3,7 @@ package ua.krasnyanskiy.pattern.state;
 /**
  * @author Alexander Krasnyanskiy
  */
-public abstract class State {
+public abstract class SuperState {
 
     /*protected */static int cash;
     /*protected */static int completion; // the percentage of completion

@@ -8,8 +8,8 @@ public class AppRunner {
 
         Context context = new Context();
 
-        State initialState = new FirstState();
-        context.changeContextState(initialState); // update context
+        SuperState initialSuperState = new FirstState();
+        context.changeContextState(initialSuperState); // update context
 
         context.goNextStep(15);
         context.goNextStep(20);

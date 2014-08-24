@@ -3,20 +3,17 @@ package ua.krasnyanskiy.pattern.state;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class SecondState extends State {
+public class SecondState extends SuperState {
 
     @Override
     public void execute(Context ctx, Integer cash) {
-        State me = this;
         calculate(cash);
-
-        // todo: see how modification of context depends on {data}
-        ctx.changeContextState(State.cash > 56 ? me : new ThirdState());
+        ctx.changeContextState(SuperState.cash > 56 ? this : new ThirdState()); // todo: see how modification of context depends on {cash}
     }
 
     private void calculate(Integer cash) {
-        State.cash += (cash - 5);
+        SuperState.cash += (cash - 5);
         completion += 5;
-        System.out.println("Printed in the second state: " + State.cash);
+        System.out.println("Printed in the second state: " + SuperState.cash);
     }
 }
