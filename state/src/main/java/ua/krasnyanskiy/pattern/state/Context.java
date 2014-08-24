@@ -18,7 +18,6 @@ public class Context {
         currentState.execute(this, cash);
     }
 
-
     public int getCompletion() {
         return State.completion;
     }
