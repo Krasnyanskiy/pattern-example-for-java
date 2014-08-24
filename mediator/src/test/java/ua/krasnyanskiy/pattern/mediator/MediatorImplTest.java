@@ -1,6 +1,5 @@
 package ua.krasnyanskiy.pattern.mediator;
 
-import org.mockito.Mockito;
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.annotations.Test;
 import ua.krasnyanskiy.pattern.mediator.model.Broker;
@@ -15,7 +14,9 @@ import java.util.Set;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 /**
  * Unit tests for {@link MediatorImpl}
@@ -33,8 +34,8 @@ public class MediatorImplTest extends PowerMockTestCase {
         /* Given */
         final Mediator mediator = new MediatorImpl();
 
-        final Consumer consumer = Mockito.spy(new Consumer(mediator, "John", "Hi form John!"));
-        final Producer producer = Mockito.spy(new Producer(mediator, "Bill", "Hi form Bill!"));
+        final Consumer consumer = spy(new Consumer(mediator, "John", "Hi form John!"));
+        final Producer producer = spy(new Producer(mediator, "Bill", "Hi form Bill!"));
 
         doNothing().when(consumer).handle(anyString());
         doNothing().when(producer).handle(anyString());
@@ -50,7 +51,7 @@ public class MediatorImplTest extends PowerMockTestCase {
         producer.send(producer.getMessage());
 
         /* Than */
-        Mockito.verify(consumer, times(1)).handle("Hi form Bill!");
+        verify(consumer, times(1)).handle("Hi form Bill!");
     }
 
     @Test
@@ -62,9 +63,9 @@ public class MediatorImplTest extends PowerMockTestCase {
         /* Given */
         final Mediator mediator = new MediatorImpl();
 
-        final Broker broker = Mockito.spy(new Broker(mediator, "John", "Hi form John!"));
-        final Whore whore = Mockito.spy(new Whore(mediator, "Sasha Gray", "Hi from Sasha!"));
-        final Bartender bartender = Mockito.spy(new Bartender(mediator, "Tom Cruise", "Hi from Tom!"));
+        final Broker broker = spy(new Broker(mediator, "John", "Hi form John!"));
+        final Whore whore = spy(new Whore(mediator, "Sasha Gray", "Hi from Sasha!"));
+        final Bartender bartender = spy(new Bartender(mediator, "Tom Cruise", "Hi from Tom!"));
 
         doNothing().when(broker).handle(anyString());
         doNothing().when(whore).handle(anyString());
@@ -86,9 +87,9 @@ public class MediatorImplTest extends PowerMockTestCase {
         broker.send(broker.getMessage());
 
         /* Than */
-        Mockito.verify(bartender, times(1)).handleSecret("Hi from Sasha!");
-        Mockito.verify(whore, times(1)).handle("Hi form John!");
-        Mockito.verify(bartender, times(1)).handle("Hi form John!");
+        verify(bartender, times(1)).handleSecret("Hi from Sasha!");
+        verify(whore, times(1)).handle("Hi form John!");
+        verify(bartender, times(1)).handle("Hi form John!");
     }
 }
 

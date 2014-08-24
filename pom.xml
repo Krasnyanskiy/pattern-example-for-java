@@ -20,6 +20,7 @@
         <module>memento</module>
         <module>visitor</module>
         <module>template-method</module>
+        <module>state</module>
     </modules>
 
     <dependencies>
