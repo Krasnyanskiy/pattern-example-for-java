@@ -6,14 +6,15 @@ package ua.krasnyanskiy.pattern.state;
 public class FirstState extends State {
 
     @Override
-    public void execute(Context ctx, Integer data) {
+    public void execute(Context ctx, Integer cash) {
         State me = this;
-        doJob(data -= 100);
-        ctx.changeContextState(data > 100 ? me : new SecondState()); // modification of context
+        process(cash);
+        ctx.changeContextState(State.cash > 80 ? me : new SecondState()); // modification of context
     }
 
-    private void doJob(Integer data) {
-        completion += 15;
-        System.out.println("Printed in the first state object: {" + data + "}");
+    private void process(Integer cash) {
+        State.cash += cash;
+        completion += 30;
+        System.out.println("Printed in the first state object: {" + State.cash + "}");
     }
 }

@@ -21,6 +21,7 @@
         <module>visitor</module>
         <module>template-method</module>
         <module>state</module>
+        <module>strategy</module>
     </modules>
 
     <dependencies>

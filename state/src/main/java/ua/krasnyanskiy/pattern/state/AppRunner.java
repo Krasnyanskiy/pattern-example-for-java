@@ -11,9 +11,9 @@ public class AppRunner {
         State initialState = new FirstState();
         context.changeContextState(initialState); // update context
 
-        context.execute(10);
-        context.execute(20);
-        context.execute(30);
+        context.goNextStep(15);
+        context.goNextStep(20);
+        context.goNextStep(30);
 
         System.out.println("Completed: " + context.getCompletion() + "%");
     }

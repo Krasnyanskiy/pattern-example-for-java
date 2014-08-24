@@ -5,7 +5,8 @@ package ua.krasnyanskiy.pattern.state;
  */
 public abstract class State {
 
-    protected int completion; // the percentage of completion
+    /*protected */static int cash;
+    /*protected */static int completion; // the percentage of completion
 
     public abstract void execute (Context ctx, Integer data);
 }

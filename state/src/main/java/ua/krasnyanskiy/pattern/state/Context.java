@@ -14,12 +14,12 @@ public class Context {
         currentState = newState;
     }
 
-    public void execute(Integer data) {
-        currentState.execute(this, data);
+    public void goNextStep(Integer cash) {
+        currentState.execute(this, cash);
     }
 
 
     public int getCompletion() {
-        return currentState.completion;
+        return State.completion;
     }
 }

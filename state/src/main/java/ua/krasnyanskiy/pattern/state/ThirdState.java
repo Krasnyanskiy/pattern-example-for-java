@@ -6,16 +6,17 @@ package ua.krasnyanskiy.pattern.state;
 public class ThirdState extends State {
 
     @Override
-    public void execute(Context ctx, Integer data) {
+    public void execute(Context ctx, Integer cash) {
         State me = this;
-        runJob(data *= 2);
+        runJob(cash);
 
         // todo: see how modification of context depends on {data}
-        ctx.changeContextState(data > 7 ? me : new FirstState());
+        ctx.changeContextState(State.cash < 10 ? me : new FirstState());
     }
 
-    private void runJob(Integer data) {
-        completion += 25;
-        System.out.println("Printed in the second state: " + data);
+    private void runJob(Integer cash) {
+        State.cash *= (cash - 2) < 0 ? 0 : (cash - 2);
+        completion += 20;
+        System.out.println("Printed in the third state: <" + State.cash + ">");
     }
 }
