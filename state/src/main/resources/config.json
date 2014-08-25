@@ -1,0 +1,8 @@
+{
+    "url": "http://127.0.0.1/jasperserver-pro/",
+    "rest-version": "rest_v2",
+    "credentials": {
+        "username": "Alex",
+        "password": "qwerty",
+    }
+}

@@ -1,0 +1,8 @@
+<configuration>
+    <url>http://192.0.0.1/jasperserver-pro/</url>
+    <credentials>
+        <username>Alex</username>
+        <password>qwerty</password>
+    </credentials>
+    <rest-version>rest_v2</rest-version>
+</configuration>

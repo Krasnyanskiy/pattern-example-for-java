@@ -1,0 +1,28 @@
+#############################
+# REST Client Configuration #
+#############################
+
+# URL path to JasperReport Server
+# - - - - - - - - - - - - - - - -
+url: http://127.0.0.1/jasperserver-pro,
+
+
+# Veriosn of protocol
+# - - - - - - - - - -
+rest-version: rest_v2,
+
+
+# User Credentials
+# - - - - - - - - -
+credentials: {
+    username: superuser,
+    password: superuser
+}
+
+
+
+
+
+
+
+
