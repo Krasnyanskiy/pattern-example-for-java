@@ -22,7 +22,7 @@ public abstract class State {
     public abstract void execute (Context ctx, Integer data);
 
     /**
-     * Simple Template Method Pattern implementation
+     * Simple Template Method Design Pattern implementation
      */
     protected void log() {
         List<Date> parameters = content.get(stateName);
