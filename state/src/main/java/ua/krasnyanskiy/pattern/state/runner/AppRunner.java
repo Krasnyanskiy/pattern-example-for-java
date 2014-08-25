@@ -1,4 +1,8 @@
-package ua.krasnyanskiy.pattern.state;
+package ua.krasnyanskiy.pattern.state.runner;
+
+import ua.krasnyanskiy.pattern.state.wrappee.FirstState;
+import ua.krasnyanskiy.pattern.state.wrappee.State;
+import ua.krasnyanskiy.pattern.state.wrapper.Context;
 
 /**
  * @author Alexander Krasnyanskiy
@@ -8,8 +12,8 @@ public class AppRunner {
 
         Context context = new Context();
 
-        SuperState initialSuperState = new FirstState();
-        context.changeContextState(initialSuperState); // update context
+        State initialState = new FirstState();
+        context.changeContextState(initialState); // update context
 
         context.goNextStep(15);
         context.goNextStep(20);
