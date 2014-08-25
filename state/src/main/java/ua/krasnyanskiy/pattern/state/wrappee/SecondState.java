@@ -2,9 +2,7 @@ package ua.krasnyanskiy.pattern.state.wrappee;
 
 import ua.krasnyanskiy.pattern.state.wrapper.Context;
 
-import java.util.Date;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author Alexander Krasnyanskiy
@@ -22,18 +20,13 @@ public class SecondState extends State {
     }
 
     private void calculate(Integer newCash) {
-        List<Date> parameters;
-
-        if ((parameters = content.get(stateName)) != null) {
-            parameters.add(new Date());
-        } else {
-            content.put(stateName, new LinkedList<Date>() {{
-                add(new Date());
-            }});
-        }
-
         storedCash += (newCash - 5);
         completion += 5;
+        log();
+    }
+
+    @Override
+    protected void printMessageAndTime() {
         System.out.println("Printed in the second state: " + storedCash +
                 " on " + ((LinkedList) content.get(stateName)).getLast());
     }
