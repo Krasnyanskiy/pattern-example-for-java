@@ -17,6 +17,10 @@ public class CreditCardPaymentStrategy implements PaymentStrategy {
         this.dateOfExpiry = dateOfExpiry;
     }
 
+    public CreditCardPaymentStrategy() {
+
+    }
+
     public String getName() {
         return name;
     }

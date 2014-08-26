@@ -1,6 +1,8 @@
-package ua.krasnyanskiy.pattern.strategy.entity;
+package ua.krasnyanskiy.pattern.strategy.context;
 
+import ua.krasnyanskiy.pattern.strategy.algorithm.CreditCardPaymentStrategy;
 import ua.krasnyanskiy.pattern.strategy.algorithm.PaymentStrategy;
+import ua.krasnyanskiy.pattern.strategy.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +11,13 @@ import java.util.List;
  * @author Alexander Krasnyanskiy
  */
 public class ShoppingCard {
+
+    private PaymentStrategy strategy;
     private List<Product> products;
 
     public ShoppingCard() {
         products = new ArrayList<Product>();
+        strategy = new CreditCardPaymentStrategy(); // default empty strategy fixme: need to setup
     }
 
     public List<Product> getProducts() {
@@ -23,12 +28,20 @@ public class ShoppingCard {
         this.products = products;
     }
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         products.add(product);
     }
 
-    public void deleteProduct(Product product){
+    public void deleteProduct(Product product) {
         products.remove(product);
+    }
+
+    public PaymentStrategy getStrategy() {
+        return strategy;
+    }
+
+    public void updateStrategy(PaymentStrategy strategy) {
+        this.strategy = strategy;
     }
 
     public int calculateTotal() {
@@ -39,7 +52,7 @@ public class ShoppingCard {
         return sum;
     }
 
-    public void pay(PaymentStrategy strategy) {
+    public void pay() {
         int amount = calculateTotal();
         strategy.pay(amount);
     }

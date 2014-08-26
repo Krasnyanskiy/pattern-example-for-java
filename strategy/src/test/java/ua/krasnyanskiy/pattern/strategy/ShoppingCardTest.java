@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.krasnyanskiy.pattern.strategy.algorithm.CreditCardPaymentStrategy;
 import ua.krasnyanskiy.pattern.strategy.entity.Product;
-import ua.krasnyanskiy.pattern.strategy.entity.ShoppingCard;
+import ua.krasnyanskiy.pattern.strategy.context.ShoppingCard;
 import ua.krasnyanskiy.pattern.strategy.entity.Toy;
 
 import java.util.ArrayList;
@@ -120,7 +120,8 @@ public class ShoppingCardTest {
         doReturn(100).when(cardSpy).calculateTotal();
 
         /* When */
-        cardSpy.pay(strategyMock);
+        cardSpy.updateStrategy(strategyMock);
+        cardSpy.pay();
 
         /* Than */
         verify(strategyMock, times(1)).pay(100);
