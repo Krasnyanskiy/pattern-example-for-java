@@ -5,10 +5,10 @@ import ua.krasnyanskiy.pattern.observer.object.Client;
 /**
  * @author Alexander Krasnyanskiy
  */
-public abstract class Messenger {
-    public abstract void registerClient(Client client);
-    public abstract void removeClient(Client client);
-    public abstract void notifyClients();
+public interface Messenger {
 
-    public abstract void setNews(String news);
+    void registerClient(Client client);
+    void removeClient(Client client);
+    void notifyClients();
+    void setNews(String news);
 }

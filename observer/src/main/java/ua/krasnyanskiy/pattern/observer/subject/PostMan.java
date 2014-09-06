@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class PostMan extends Messenger {
+public class PostMan implements Messenger {
 
     private List<Client> clients;
     private String news;

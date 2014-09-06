@@ -5,7 +5,7 @@ import ua.krasnyanskiy.pattern.observer.subject.Messenger;
 /**
  * @author Alexander Krasnyanskiy
  */
-public class Businessman implements Client {
+public class Businessman implements Client { // observer (наблюдатель)
 
     private String businessmanName;
     private String latestNews;
