@@ -36,7 +36,7 @@ public class PostMan implements Messenger {
     @Override
     public void notifyClients() {
         for (Client client : clients) {
-            client.get(news);
+            client.get(news); // callback
         }
     }
 }
